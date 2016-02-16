@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J35-LD-zny">
-                                <rect key="frame" x="180" y="236" width="240" height="240"/>
+                                <rect key="frame" x="180" y="180" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="tSv-Ch-rwT"/>
                                 </constraints>
@@ -25,10 +25,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="56" id="5Af-TM-uM2"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5Af-TM-uM2"/>
                             <constraint firstItem="J35-LD-zny" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PyQ-vM-wDM"/>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="56" id="QNx-Pv-maU"/>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="172" id="eF5-LW-6N0"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QNx-Pv-maU"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="116" id="eF5-LW-6N0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tYk-RX-4VI">
