@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0u5-C9-oWX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Image View Controller-->
@@ -17,52 +18,79 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J35-LD-zny">
-                                <rect key="frame" x="180" y="180" width="240" height="240"/>
+                                <rect key="frame" x="20" y="72" width="560" height="476"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="tSv-Ch-rwT"/>
+                                    <constraint firstAttribute="width" constant="560" id="tSv-Ch-rwT"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5Af-TM-uM2"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="10" id="5Af-TM-uM2"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="7aH-lb-jTd"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="7uV-UK-FRE"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Gi3-Ja-20X"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="J35-LD-zny" secondAttribute="bottom" constant="8" id="Ibl-hZ-yau"/>
                             <constraint firstItem="J35-LD-zny" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PyQ-vM-wDM"/>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QNx-Pv-maU"/>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="116" id="eF5-LW-6N0"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="10" id="QNx-Pv-maU"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="eF5-LW-6N0"/>
+                            <constraint firstAttribute="trailing" secondItem="J35-LD-zny" secondAttribute="trailing" constant="20" id="fr6-IL-Xfh"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rdY-79-Aek"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="x9H-3u-PP1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="J35-LD-zny" secondAttribute="bottom" constant="8" id="yNn-C2-Fyv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tYk-RX-4VI">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9eH-Ll-fGQ">
+                    <toolbarItems>
+                        <barButtonItem systemItem="edit" id="9rT-dh-k3f">
                             <connections>
-                                <action selector="addButton:" destination="BYZ-38-t0r" id="yOq-C0-o38"/>
+                                <action selector="editButtonSelected:" destination="BYZ-38-t0r" id="xDl-hh-t8H"/>
                             </connections>
                         </barButtonItem>
-                    </navigationItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ibR-n2-r3s"/>
+                        <barButtonItem systemItem="add" id="ARB-F4-TXI">
+                            <connections>
+                                <action selector="addButton:" destination="BYZ-38-t0r" id="29x-3l-Ood"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="2J9-fE-sBr"/>
+                        <barButtonItem systemItem="save" id="mGw-L9-U5X">
+                            <connections>
+                                <action selector="saveButton:" destination="BYZ-38-t0r" id="n9a-TK-UX6"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="tYk-RX-4VI"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="J35-LD-zny" id="M1n-zM-wzq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="339"/>
+            <point key="canvasLocation" x="1007" y="506"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="RRS-z1-I8I">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0u5-C9-oWX" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="0u5-C9-oWX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="tAV-sc-hr9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ave-Rh-APB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="jRL-y8-DIP">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="BDl-fo-uMB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ycO-uw-khy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="190" y="-353"/>
+            <point key="canvasLocation" x="1002" y="-353"/>
         </scene>
     </scenes>
 </document>

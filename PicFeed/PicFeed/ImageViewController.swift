@@ -13,9 +13,11 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     lazy var imagePicker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //        self.setupAppearance()
+        //        let filterNames = CIFilter.filterNamesInCategory(kCICategoryBuiltIn) as [String]
+        //        print(filterNames)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -36,18 +38,15 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.presentViewController(self.imagePicker, animated: true, completion: nil)
     }
     
-    
     func presentActionSheet()
     {
         let actionSheet = UIAlertController(title: "Source", message: "Please select the source type", preferredStyle: .ActionSheet)
         let cameraAction = UIAlertAction(title: "Camera", style: .Default) { (action) -> Void in
             self.presentImagePicker(.Camera)
-            
         }
         
         let photoAction = UIAlertAction(title: "Photos", style: .Default) { (action) -> Void in
             self.presentImagePicker(.PhotoLibrary)
-            
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
@@ -56,22 +55,58 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         actionSheet.addAction(cancelAction)
         
         self.presentViewController(actionSheet, animated: true, completion: nil)
-        
     }
     @IBAction func addButton(sender: AnyObject) {
         
         if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-            
             self.presentActionSheet()
             
         } else {
-            
             self.presentImagePicker(.PhotoLibrary)
         }
         
     }
+    @IBAction func editButtonSelected(sender: AnyObject)
+    {
+        guard let image = self.imageView.image else { return }
+        
+        let actionSheet = UIAlertController(title: "Filters", message: "Please select a filter", preferredStyle: .Alert)
+        
+        let bwAction = UIAlertAction(title: "Black & White", style: .Default) { (action) -> Void in
+            Filters.bw(image, completion: { (theImage) -> () in
+                self.imageView.image = theImage
+            })
+        }
+        
+        //more filter actions..
+        
+        //action for resetting to original image..
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        actionSheet.addAction(bwAction)
+        actionSheet.addAction(cancelAction)
+        
+        self.presentViewController(actionSheet, animated: true, completion: nil)
+    }
+    
+    @IBAction func saveButton(sender: AnyObject)
+    {
+        guard let image = self.imageView.image else { return }
+        API.shared.POST(Post(image: image)) { (success) -> () in
+            if success {
+                UIImageWriteToSavedPhotosAlbum(image, self, "image:didFinishSavingWithError:contextInfo:", nil) //specify selector
+            }
+        }
+    }
+    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafePointer<Void>) //function to specify
+    {
+        if error == nil {
+            let alertController = UIAlertController(title: "Saved!", message: "Your image has been saved to your photos.", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
 }
-
 extension ImageViewController
 {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?)
@@ -85,3 +120,4 @@ extension ImageViewController
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
+
