@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="0u5-C9-oWX">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Image View Controller-->
@@ -18,26 +18,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J35-LD-zny">
-                                <rect key="frame" x="20" y="72" width="560" height="476"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="560" id="tSv-Ch-rwT"/>
-                                </constraints>
+                                <rect key="frame" x="18" y="54" width="564" height="492"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Zak-zu-ahE">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="10" id="5Af-TM-uM2"/>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="7aH-lb-jTd"/>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="7uV-UK-FRE"/>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Gi3-Ja-20X"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="J35-LD-zny" secondAttribute="bottom" constant="8" id="Ibl-hZ-yau"/>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PyQ-vM-wDM"/>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="10" id="QNx-Pv-maU"/>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="eF5-LW-6N0"/>
-                            <constraint firstAttribute="trailing" secondItem="J35-LD-zny" secondAttribute="trailing" constant="20" id="fr6-IL-Xfh"/>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rdY-79-Aek"/>
-                            <constraint firstItem="J35-LD-zny" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="x9H-3u-PP1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="J35-LD-zny" secondAttribute="bottom" constant="8" id="yNn-C2-Fyv"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.82" id="Lzq-WT-sX9"/>
+                            <constraint firstItem="Zak-zu-ahE" firstAttribute="centerX" secondItem="J35-LD-zny" secondAttribute="centerX" id="M7z-aS-J3g"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cZ9-OY-lha"/>
+                            <constraint firstItem="Zak-zu-ahE" firstAttribute="centerY" secondItem="J35-LD-zny" secondAttribute="centerY" id="jSH-Xr-nHY"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.94" id="pEy-OP-80E"/>
+                            <constraint firstItem="J35-LD-zny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uxs-bQ-j3z"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -62,6 +56,7 @@
                     <navigationItem key="navigationItem" id="tYk-RX-4VI"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="activityLoader" destination="Zak-zu-ahE" id="2hC-dk-hyw"/>
                         <outlet property="imageView" destination="J35-LD-zny" id="M1n-zM-wzq"/>
                     </connections>
                 </viewController>

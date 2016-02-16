@@ -9,9 +9,7 @@
 import Foundation
 import CloudKit
 
-
 typealias APICompletion = (success: Bool) -> ()
-
 
 class API
 {
@@ -36,7 +34,6 @@ class API
                         print(record)
                         completion(success: true)
                     }
-                    
                 })
                 
             }

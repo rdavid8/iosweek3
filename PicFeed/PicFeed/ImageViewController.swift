@@ -10,9 +10,11 @@ import UIKit
 
 class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
+    var originalImage: UIImage?
     lazy var imagePicker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var activityLoader: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
         //        self.setupAppearance()
@@ -74,17 +76,43 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         let bwAction = UIAlertAction(title: "Black & White", style: .Default) { (action) -> Void in
             Filters.bw(image, completion: { (theImage) -> () in
-                self.imageView.image = theImage
+//            self.activityIndicatorView start
+            self.imageView.image = theImage
             })
         }
+        let stAction = UIAlertAction(title: "Sepia Tone", style: .Default) { (action) -> Void in
+            Filters.st(image, completion: { (theImage) -> () in
+            self.imageView.image = theImage
+            })
+        }
+        let mcAction = UIAlertAction(title: "Monochrome", style: .Default) { (action) -> Void in
+            Filters.mc(image, completion: { (theImage) -> () in
+            self.imageView.image = theImage
+            })
+        }
+            let pxAction = UIAlertAction(title: "Pixellate", style: .Default) { (action) -> Void in
+            Filters.px(image, completion: { (theImage) -> () in
+            self.imageView.image = theImage
+            })
+        }
+            let lsAction = UIAlertAction(title: "Line Screen", style: .Default) { (action) -> Void in
+            Filters.ls(image, completion: { (theImage) -> () in
+            self.imageView.image = theImage
+            })
+        }
+            let reset = UIAlertAction(title: "Reset", style: .Default) { (action) -> Void in
+            self.imageView.image = self.originalImage
+        }
         
-        //more filter actions..
-        
-        //action for resetting to original image..
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
         
-        actionSheet.addAction(bwAction)
-        actionSheet.addAction(cancelAction)
+            actionSheet.addAction(bwAction)
+            actionSheet.addAction(stAction)
+            actionSheet.addAction(mcAction)
+            actionSheet.addAction(pxAction)
+            actionSheet.addAction(lsAction)
+            actionSheet.addAction(reset)
+            actionSheet.addAction(cancelAction)
         
         self.presentViewController(actionSheet, animated: true, completion: nil)
     }
@@ -112,7 +140,9 @@ extension ImageViewController
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?)
     {
         self.imageView.image = image
+        self.originalImage = image
         self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController)

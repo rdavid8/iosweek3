@@ -23,7 +23,7 @@ extension UIImage
 
 extension NSURL
 {
-    class func imageURL() -> NSURL //phsyical store image before uload
+    class func imageURL() -> NSURL //physically store image before upload
     {
         guard let documentsDirectory = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first else { fatalError() }
         return documentsDirectory.URLByAppendingPathComponent("image")

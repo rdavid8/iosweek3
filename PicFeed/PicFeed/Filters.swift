@@ -33,10 +33,25 @@ class Filters
             })
         }
     }
-    
     class func bw(image: UIImage, completion: FiltersCompletion)
     {
         self.filter("CIPhotoEffectMono", image: image, completion: completion)
+    }
+    class func st(image: UIImage, completion: FiltersCompletion)
+    {
+        self.filter("CISepiaTone", image: image, completion: completion)
+    }
+    class func mc(image: UIImage, completion: FiltersCompletion)
+    {
+        self.filter("CIColorMonochrome", image: image, completion: completion)
+    }
+    class func px(image: UIImage, completion: FiltersCompletion)
+    {
+        self.filter("CIPixellate", image: image, completion: completion)
+    }
+    class func ls(image: UIImage, completion: FiltersCompletion)
+    {
+        self.filter("CILineScreen", image: image, completion: completion)
     }
 }
 
