@@ -39,7 +39,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     func presentActionSheet()
     {
-        let actionSheet = UIAlertController(title: "Source", message: "pleaseselect the sorurce type", preferredStyle: .ActionSheet)
+        let actionSheet = UIAlertController(title: "Source", message: "Please select the source type", preferredStyle: .ActionSheet)
         let cameraAction = UIAlertAction(title: "Camera", style: .Default) { (action) -> Void in
             self.presentImagePicker(.Camera)
             
@@ -59,7 +59,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }
     @IBAction func addButton(sender: AnyObject) {
-    
+        
         if UIImagePickerController.isSourceTypeAvailable(.Camera) {
             
             self.presentActionSheet()
