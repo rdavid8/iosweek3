@@ -12,12 +12,16 @@
 		3AC12E101C6E403700C4D45D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC12E0E1C6E403700C4D45D /* Main.storyboard */; };
 		3AC12E121C6E403700C4D45D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AC12E111C6E403700C4D45D /* Assets.xcassets */; };
 		3AC12E151C6E403700C4D45D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC12E131C6E403700C4D45D /* LaunchScreen.storyboard */; };
-		3AC12E1E1C6E415700C4D45D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC12E1D1C6E415700C4D45D /* CloudKit.framework */; };
 		3AC12E231C738B6900C4D45D /* Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12E221C738B6900C4D45D /* Additions.swift */; };
 		3AC12E261C738F4F00C4D45D /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12E251C738F4F00C4D45D /* Filters.swift */; };
 		3AC12E471C73A13800C4D45D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12E461C73A13800C4D45D /* API.swift */; };
 		3AC12E491C73A27100C4D45D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12E481C73A27100C4D45D /* Post.swift */; };
 		3AC12E4B1C73A2FE00C4D45D /* ModelAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12E4A1C73A2FE00C4D45D /* ModelAdditions.swift */; };
+		3AC12E4D1C74ECC400C4D45D /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12E4C1C74ECC400C4D45D /* GalleryViewController.swift */; };
+		3AC12E4F1C74ED3400C4D45D /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12E4E1C74ED3400C4D45D /* GalleryCollectionViewCell.swift */; };
+		3AC12E511C74EE9800C4D45D /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12E501C74EE9800C4D45D /* Identity.swift */; };
+		3AC12E531C74F24000C4D45D /* GalleryCustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12E521C74F24000C4D45D /* GalleryCustomFlowLayout.swift */; };
+		3AC12E551C75391A00C4D45D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC12E541C75391A00C4D45D /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,12 +33,16 @@
 		3AC12E141C6E403700C4D45D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AC12E161C6E403700C4D45D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AC12E1C1C6E413500C4D45D /* PicFeed.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PicFeed.entitlements; sourceTree = "<group>"; };
-		3AC12E1D1C6E415700C4D45D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		3AC12E221C738B6900C4D45D /* Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Additions.swift; sourceTree = "<group>"; };
 		3AC12E251C738F4F00C4D45D /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		3AC12E461C73A13800C4D45D /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		3AC12E481C73A27100C4D45D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		3AC12E4A1C73A2FE00C4D45D /* ModelAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelAdditions.swift; sourceTree = "<group>"; };
+		3AC12E4C1C74ECC400C4D45D /* GalleryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		3AC12E4E1C74ED3400C4D45D /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		3AC12E501C74EE9800C4D45D /* Identity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
+		3AC12E521C74F24000C4D45D /* GalleryCustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCustomFlowLayout.swift; sourceTree = "<group>"; };
+		3AC12E541C75391A00C4D45D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AC12E1E1C6E415700C4D45D /* CloudKit.framework in Frameworks */,
+				3AC12E551C75391A00C4D45D /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +60,7 @@
 		3AC12DFE1C6E403700C4D45D = {
 			isa = PBXGroup;
 			children = (
-				3AC12E1D1C6E415700C4D45D /* CloudKit.framework */,
+				3AC12E541C75391A00C4D45D /* CloudKit.framework */,
 				3AC12E091C6E403700C4D45D /* PicFeed */,
 				3AC12E081C6E403700C4D45D /* Products */,
 			);
@@ -80,7 +88,7 @@
 		3AC12E1F1C6E44AB00C4D45D /* App Global */ = {
 			isa = PBXGroup;
 			children = (
-				3AC12E461C73A13800C4D45D /* API.swift */,
+				3AC12E221C738B6900C4D45D /* Additions.swift */,
 				3AC12E0A1C6E403700C4D45D /* AppDelegate.swift */,
 				3AC12E161C6E403700C4D45D /* Info.plist */,
 			);
@@ -91,8 +99,11 @@
 			isa = PBXGroup;
 			children = (
 				3AC12E0E1C6E403700C4D45D /* Main.storyboard */,
+				3AC12E4E1C74ED3400C4D45D /* GalleryCollectionViewCell.swift */,
 				3AC12E111C6E403700C4D45D /* Assets.xcassets */,
 				3AC12E131C6E403700C4D45D /* LaunchScreen.storyboard */,
+				3AC12E501C74EE9800C4D45D /* Identity.swift */,
+				3AC12E521C74F24000C4D45D /* GalleryCustomFlowLayout.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -100,8 +111,8 @@
 		3AC12E211C6E44CA00C4D45D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3AC12E4C1C74ECC400C4D45D /* GalleryViewController.swift */,
 				3AC12E0C1C6E403700C4D45D /* ImageViewController.swift */,
-				3AC12E221C738B6900C4D45D /* Additions.swift */,
 				3AC12E271C738F5700C4D45D /* Other */,
 				3AC12E241C738B6D00C4D45D /* Categories */,
 			);
@@ -118,6 +129,7 @@
 		3AC12E271C738F5700C4D45D /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				3AC12E461C73A13800C4D45D /* API.swift */,
 				3AC12E251C738F4F00C4D45D /* Filters.swift */,
 				3AC12E481C73A27100C4D45D /* Post.swift */,
 				3AC12E4A1C73A2FE00C4D45D /* ModelAdditions.swift */,
@@ -207,7 +219,11 @@
 				3AC12E0D1C6E403700C4D45D /* ImageViewController.swift in Sources */,
 				3AC12E491C73A27100C4D45D /* Post.swift in Sources */,
 				3AC12E0B1C6E403700C4D45D /* AppDelegate.swift in Sources */,
+				3AC12E531C74F24000C4D45D /* GalleryCustomFlowLayout.swift in Sources */,
+				3AC12E4D1C74ECC400C4D45D /* GalleryViewController.swift in Sources */,
 				3AC12E471C73A13800C4D45D /* API.swift in Sources */,
+				3AC12E511C74EE9800C4D45D /* Identity.swift in Sources */,
+				3AC12E4F1C74ED3400C4D45D /* GalleryCollectionViewCell.swift in Sources */,
 				3AC12E4B1C73A2FE00C4D45D /* ModelAdditions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,8 +14,8 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     lazy var imagePicker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var activityLoader: UIActivityIndicatorView!
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         //        self.setupAppearance()
         //        let filterNames = CIFilter.filterNamesInCategory(kCICategoryBuiltIn) as [String]
@@ -28,7 +28,8 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         super.viewDidAppear(animated)
     }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -75,27 +76,27 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         let actionSheet = UIAlertController(title: "Filters", message: "Please select a filter", preferredStyle: .ActionSheet)
         
         let bwAction = UIAlertAction(title: "Black & White", style: .Default) { (action) -> Void in
-            Filters.bw(image, completion: { (theImage) -> () in
+            Filters.shared.bw(image, completion: { (theImage) -> () in
             self.imageView.image = theImage
             })
         }
         let stAction = UIAlertAction(title: "Sepia Tone", style: .Default) { (action) -> Void in
-            Filters.st(image, completion: { (theImage) -> () in
+            Filters.shared.st(image, completion: { (theImage) -> () in
             self.imageView.image = theImage
             })
         }
         let mcAction = UIAlertAction(title: "Monochrome", style: .Default) { (action) -> Void in
-            Filters.mc(image, completion: { (theImage) -> () in
+            Filters.shared.mc(image, completion: { (theImage) -> () in
             self.imageView.image = theImage
             })
         }
             let pxAction = UIAlertAction(title: "Pixellate", style: .Default) { (action) -> Void in
-            Filters.px(image, completion: { (theImage) -> () in
+            Filters.shared.px(image, completion: { (theImage) -> () in
             self.imageView.image = theImage
             })
         }
             let lsAction = UIAlertAction(title: "Line Screen", style: .Default) { (action) -> Void in
-            Filters.ls(image, completion: { (theImage) -> () in
+            Filters.shared.ls(image, completion: { (theImage) -> () in
             self.imageView.image = theImage
             })
         }

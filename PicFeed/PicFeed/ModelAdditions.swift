@@ -21,7 +21,7 @@ extension Post
     {
         let imageURL = NSURL.imageURL()
         guard let data = UIImageJPEGRepresentation(post.image, 0.7) else { throw PostError.WritingImage }
-        let saved = data.writeToURL(imageURL, atomically: true)
+        let saved = data.writeToURL(imageURL, atomically: true) //imageURL is a directory
         
         if saved {
             let asset = CKAsset(fileURL: imageURL) //requires imageURL (write image file to system)
