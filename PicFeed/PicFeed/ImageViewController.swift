@@ -72,7 +72,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     {
         guard let image = self.imageView.image else { return }
         
-        let actionSheet = UIAlertController(title: "Filters", message: "Please select a filter", preferredStyle: .Alert)
+        let actionSheet = UIAlertController(title: "Filters", message: "Please select a filter", preferredStyle: .ActionSheet)
         
         let bwAction = UIAlertAction(title: "Black & White", style: .Default) { (action) -> Void in
             Filters.bw(image, completion: { (theImage) -> () in
@@ -100,7 +100,7 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
             self.imageView.image = theImage
             })
         }
-            let reset = UIAlertAction(title: "Reset", style: .Default) { (action) -> Void in
+            let reset = UIAlertAction(title: "Reset", style: .Destructive) { (action) -> Void in
             self.imageView.image = self.originalImage
         }
         
