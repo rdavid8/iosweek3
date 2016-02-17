@@ -76,7 +76,6 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         let bwAction = UIAlertAction(title: "Black & White", style: .Default) { (action) -> Void in
             Filters.bw(image, completion: { (theImage) -> () in
-//            self.activityIndicatorView start
             self.imageView.image = theImage
             })
         }

@@ -20,16 +20,11 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J35-LD-zny">
                                 <rect key="frame" x="18" y="54" width="564" height="492"/>
                             </imageView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Zak-zu-ahE">
-                                <rect key="frame" x="290" y="290" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="J35-LD-zny" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.82" id="Lzq-WT-sX9"/>
-                            <constraint firstItem="Zak-zu-ahE" firstAttribute="centerX" secondItem="J35-LD-zny" secondAttribute="centerX" id="M7z-aS-J3g"/>
                             <constraint firstItem="J35-LD-zny" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cZ9-OY-lha"/>
-                            <constraint firstItem="Zak-zu-ahE" firstAttribute="centerY" secondItem="J35-LD-zny" secondAttribute="centerY" id="jSH-Xr-nHY"/>
                             <constraint firstItem="J35-LD-zny" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.94" id="pEy-OP-80E"/>
                             <constraint firstItem="J35-LD-zny" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uxs-bQ-j3z"/>
                         </constraints>
@@ -56,7 +51,6 @@
                     <navigationItem key="navigationItem" id="tYk-RX-4VI"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="activityLoader" destination="Zak-zu-ahE" id="2hC-dk-hyw"/>
                         <outlet property="imageView" destination="J35-LD-zny" id="M1n-zM-wzq"/>
                     </connections>
                 </viewController>
