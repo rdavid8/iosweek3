@@ -102,7 +102,6 @@
 				3AC12E4E1C74ED3400C4D45D /* GalleryCollectionViewCell.swift */,
 				3AC12E111C6E403700C4D45D /* Assets.xcassets */,
 				3AC12E131C6E403700C4D45D /* LaunchScreen.storyboard */,
-				3AC12E501C74EE9800C4D45D /* Identity.swift */,
 				3AC12E521C74F24000C4D45D /* GalleryCustomFlowLayout.swift */,
 			);
 			name = View;
@@ -131,6 +130,7 @@
 			children = (
 				3AC12E461C73A13800C4D45D /* API.swift */,
 				3AC12E251C738F4F00C4D45D /* Filters.swift */,
+				3AC12E501C74EE9800C4D45D /* Identity.swift */,
 				3AC12E481C73A27100C4D45D /* Post.swift */,
 				3AC12E4A1C73A2FE00C4D45D /* ModelAdditions.swift */,
 			);

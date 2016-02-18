@@ -23,7 +23,6 @@ class GalleryViewController: UIViewController, UICollectionViewDelegateFlowLayou
         super.viewDidLoad()
         self.navigationItem.title = "Gallery"
         self.collectionView.collectionViewLayout = GalleryCustomFlowLayout()
-        // Do view setup here.
     }
     override func viewWillAppear(animated: Bool)
     {

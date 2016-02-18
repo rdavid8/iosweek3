@@ -58,7 +58,7 @@
             </objects>
             <point key="canvasLocation" x="1007" y="506"/>
         </scene>
-        <!--Item-->
+        <!--Gallery-->
         <scene sceneID="Pam-yN-HLw">
             <objects>
                 <viewController id="rsj-gt-eW4" customClass="GalleryViewController" customModule="PicFeed" customModuleProvider="target" sceneMemberID="viewController">
@@ -71,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SDI-6T-l2m">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vY3-ck-fQS">
                                     <size key="itemSize" width="200" height="200"/>
@@ -114,11 +114,11 @@
                         <constraints>
                             <constraint firstItem="SDI-6T-l2m" firstAttribute="leading" secondItem="cj3-vn-tU4" secondAttribute="leading" id="7uS-rl-UeO"/>
                             <constraint firstItem="SDI-6T-l2m" firstAttribute="top" secondItem="cj3-vn-tU4" secondAttribute="top" id="G7P-hh-Fnt"/>
-                            <constraint firstItem="jfh-OB-uvi" firstAttribute="top" secondItem="SDI-6T-l2m" secondAttribute="bottom" id="dq2-IY-qCP"/>
+                            <constraint firstItem="jfh-OB-uvi" firstAttribute="top" secondItem="SDI-6T-l2m" secondAttribute="bottom" constant="-49" id="dq2-IY-qCP"/>
                             <constraint firstAttribute="trailing" secondItem="SDI-6T-l2m" secondAttribute="trailing" id="hyY-pc-h0l"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qyf-lJ-e4O"/>
+                    <tabBarItem key="tabBarItem" title="Gallery" id="qyf-lJ-e4O"/>
                     <connections>
                         <outlet property="collectionView" destination="SDI-6T-l2m" id="r71-Me-9MG"/>
                     </connections>
@@ -127,11 +127,11 @@
             </objects>
             <point key="canvasLocation" x="1676" y="506"/>
         </scene>
-        <!--Item-->
+        <!--New Post-->
         <scene sceneID="RRS-z1-I8I">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="0u5-C9-oWX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="tAV-sc-hr9"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0u5-C9-oWX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="New Post" id="tAV-sc-hr9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ave-Rh-APB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
