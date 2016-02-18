@@ -13,7 +13,7 @@ class GalleryCustomFlowLayout: UICollectionViewFlowLayout
     var columns: Int
     let spacing: CGFloat = 1.0
     
-    init(columns: Int = 2)
+    init(columns: Int = 3)
     {
         self.columns = columns
         super.init()
@@ -27,7 +27,7 @@ class GalleryCustomFlowLayout: UICollectionViewFlowLayout
     {
         self.minimumLineSpacing = self.spacing
         self.minimumInteritemSpacing = self.spacing
-        self.itemSize = CGSize(width: self.itemWidth(), height: self.itemWidth() * 2.0)
+        self.itemSize = CGSize(width: self.itemWidth() * 1.0, height: self.itemWidth() * 1.0)
     }
     
     // HELPER FUNCTIONS
