@@ -8,8 +8,13 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SegueHandlerType, FilterPreviewDelegate
 {
+    enum SegueIdentifier: String
+    {
+        case Preview = "FiltersPreviewController"
+    }
+    
     var originalImage: UIImage?
     lazy var imagePicker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
@@ -17,12 +22,8 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        //        self.setupAppearance()
-        //        let filterNames = CIFilter.filterNamesInCategory(kCICategoryBuiltIn) as [String]
-        //        print(filterNames)
-        // Do any additional setup after loading the view, typically from a nib.
     }
-    
+
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
@@ -31,7 +32,17 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        switch self.segueIdentifierForSegue(segue) {
+        case .Preview:
+            guard let previewViewController = segue.destinationViewController as? FiltersPreviewController else { fatalError("") }
+            guard let image = sender as? UIImage else { fatalError("") }
+            previewViewController.image = image
+            previewViewController.delegate = self
+            
+        }
     }
     
     func presentImagePicker(sourceType: UIImagePickerControllerSourceType)
@@ -71,50 +82,60 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     @IBAction func editButtonSelected(sender: AnyObject)
     {
-        guard let image = self.imageView.image else { return }
+
+        let alertController = UIAlertController(title: "Filters", message: "No image selected", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+        alertController.addAction(okAction)
         
-        let actionSheet = UIAlertController(title: "Filters", message: "Please select a filter", preferredStyle: .ActionSheet)
+        guard let image = self.imageView.image else
+        {
+            self.presentViewController(alertController, animated: true, completion: nil)
+            return
+        }
+        self.performSegueWithIdentifier(.Preview, sender: image)
+
+
         
-        let bwAction = UIAlertAction(title: "Black & White", style: .Default) { (action) -> Void in
-            Filters.shared.bw(image, completion: { (theImage) -> () in
-            self.imageView.image = theImage
-            })
-        }
-        let stAction = UIAlertAction(title: "Sepia Tone", style: .Default) { (action) -> Void in
-            Filters.shared.st(image, completion: { (theImage) -> () in
-            self.imageView.image = theImage
-            })
-        }
-        let mcAction = UIAlertAction(title: "Monochrome", style: .Default) { (action) -> Void in
-            Filters.shared.mc(image, completion: { (theImage) -> () in
-            self.imageView.image = theImage
-            })
-        }
-            let pxAction = UIAlertAction(title: "Pixellate", style: .Default) { (action) -> Void in
-            Filters.shared.px(image, completion: { (theImage) -> () in
-            self.imageView.image = theImage
-            })
-        }
-            let lsAction = UIAlertAction(title: "Line Screen", style: .Default) { (action) -> Void in
-            Filters.shared.ls(image, completion: { (theImage) -> () in
-            self.imageView.image = theImage
-            })
-        }
-            let reset = UIAlertAction(title: "Reset", style: .Destructive) { (action) -> Void in
-            self.imageView.image = self.originalImage
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-        
-            actionSheet.addAction(bwAction)
-            actionSheet.addAction(stAction)
-            actionSheet.addAction(mcAction)
-            actionSheet.addAction(pxAction)
-            actionSheet.addAction(lsAction)
-            actionSheet.addAction(reset)
-            actionSheet.addAction(cancelAction)
-        
-        self.presentViewController(actionSheet, animated: true, completion: nil)
+//        let bwAction = UIAlertAction(title: "Black & White", style: .Default) { (action) -> Void in
+//            Filters.shared.bw(image, completion: { (theImage) -> () in
+//            self.imageView.image = theImage
+//            })
+//        }
+//        let stAction = UIAlertAction(title: "Sepia Tone", style: .Default) { (action) -> Void in
+//            Filters.shared.st(image, completion: { (theImage) -> () in
+//            self.imageView.image = theImage
+//            })
+//        }
+//        let mcAction = UIAlertAction(title: "Monochrome", style: .Default) { (action) -> Void in
+//            Filters.shared.mc(image, completion: { (theImage) -> () in
+//            self.imageView.image = theImage
+//            })
+//        }
+//            let pxAction = UIAlertAction(title: "Pixellate", style: .Default) { (action) -> Void in
+//            Filters.shared.px(image, completion: { (theImage) -> () in
+//            self.imageView.image = theImage
+//            })
+//        }
+//            let lsAction = UIAlertAction(title: "Line Screen", style: .Default) { (action) -> Void in
+//            Filters.shared.ls(image, completion: { (theImage) -> () in
+//            self.imageView.image = theImage
+//            })
+//        }
+//            let reset = UIAlertAction(title: "Reset", style: .Destructive) { (action) -> Void in
+//            self.imageView.image = self.originalImage
+//        }
+//        
+//        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+//        
+//            actionSheet.addAction(bwAction)
+//            actionSheet.addAction(stAction)
+//            actionSheet.addAction(mcAction)
+//            actionSheet.addAction(pxAction)
+//            actionSheet.addAction(lsAction)
+//            actionSheet.addAction(reset)
+//            actionSheet.addAction(cancelAction)
+//        
+//        self.presentViewController(actionSheet, animated: true, completion: nil)
     }
     
     @IBAction func saveButton(sender: AnyObject)
@@ -134,6 +155,12 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
+    
+    func previewViewControllerDidFinish(image: UIImage)
+    {
+        self.imageView.image = image
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 extension ImageViewController
 {
@@ -145,9 +172,6 @@ extension ImageViewController
         
     }
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController)
-    {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
+  
 }
 

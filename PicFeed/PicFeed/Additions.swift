@@ -29,3 +29,40 @@ extension NSURL
         return documentsDirectory.URLByAppendingPathComponent("image")
     }
 }
+
+extension FiltersPreviewController: UICollectionViewDelegate, UICollectionViewDataSource
+{
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.datasource.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let filterCell = collectionView.dequeueReusableCellWithReuseIdentifier("filterCell", forIndexPath: indexPath) as! GalleryCollectionViewCell
+        let filter = self.datasource[indexPath.row]
+        filter(self.image!, completion: {
+            
+            filterCell.imageView.image = $0
+        
+        })
+        
+       return filterCell
+        
+    }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+      
+        let filterCell = collectionView.cellForItemAtIndexPath(indexPath) as! GalleryCollectionViewCell
+        self.delegate?.previewViewControllerDidFinish(filterCell.imageView.image!)
+    }
+   
+    func imagePickerControllerDidCancel(picker: UIImagePickerController)
+    {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func previewViewControllerDidFinish()
+    {
+//        self.imageview.image = image.self.dismiss
+    }
+}
+

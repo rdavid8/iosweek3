@@ -22,6 +22,8 @@
 		3AC12E511C74EE9800C4D45D /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12E501C74EE9800C4D45D /* Identity.swift */; };
 		3AC12E531C74F24000C4D45D /* GalleryCustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12E521C74F24000C4D45D /* GalleryCustomFlowLayout.swift */; };
 		3AC12E551C75391A00C4D45D /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC12E541C75391A00C4D45D /* CloudKit.framework */; };
+		3AC12E571C76600500C4D45D /* FiltersPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12E561C76600500C4D45D /* FiltersPreviewController.swift */; };
+		3AC12E591C7663C100C4D45D /* SegueHanlderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC12E581C7663C100C4D45D /* SegueHanlderType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		3AC12E501C74EE9800C4D45D /* Identity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		3AC12E521C74F24000C4D45D /* GalleryCustomFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GalleryCustomFlowLayout.swift; sourceTree = "<group>"; };
 		3AC12E541C75391A00C4D45D /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		3AC12E561C76600500C4D45D /* FiltersPreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersPreviewController.swift; sourceTree = "<group>"; };
+		3AC12E581C7663C100C4D45D /* SegueHanlderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHanlderType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +114,10 @@
 		3AC12E211C6E44CA00C4D45D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				3AC12E561C76600500C4D45D /* FiltersPreviewController.swift */,
 				3AC12E4C1C74ECC400C4D45D /* GalleryViewController.swift */,
 				3AC12E0C1C6E403700C4D45D /* ImageViewController.swift */,
+				3AC12E581C7663C100C4D45D /* SegueHanlderType.swift */,
 				3AC12E271C738F5700C4D45D /* Other */,
 				3AC12E241C738B6D00C4D45D /* Categories */,
 			);
@@ -217,11 +223,13 @@
 				3AC12E231C738B6900C4D45D /* Additions.swift in Sources */,
 				3AC12E261C738F4F00C4D45D /* Filters.swift in Sources */,
 				3AC12E0D1C6E403700C4D45D /* ImageViewController.swift in Sources */,
+				3AC12E591C7663C100C4D45D /* SegueHanlderType.swift in Sources */,
 				3AC12E491C73A27100C4D45D /* Post.swift in Sources */,
 				3AC12E0B1C6E403700C4D45D /* AppDelegate.swift in Sources */,
 				3AC12E531C74F24000C4D45D /* GalleryCustomFlowLayout.swift in Sources */,
 				3AC12E4D1C74ECC400C4D45D /* GalleryViewController.swift in Sources */,
 				3AC12E471C73A13800C4D45D /* API.swift in Sources */,
+				3AC12E571C76600500C4D45D /* FiltersPreviewController.swift in Sources */,
 				3AC12E511C74EE9800C4D45D /* Identity.swift in Sources */,
 				3AC12E4F1C74ED3400C4D45D /* GalleryCollectionViewCell.swift in Sources */,
 				3AC12E4B1C73A2FE00C4D45D /* ModelAdditions.swift in Sources */,
