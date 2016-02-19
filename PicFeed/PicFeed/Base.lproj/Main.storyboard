@@ -116,7 +116,13 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" id="tYk-RX-4VI"/>
+                    <navigationItem key="navigationItem" id="tYk-RX-4VI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="jnw-R4-BSa">
+                            <connections>
+                                <action selector="shareButton:" destination="BYZ-38-t0r" id="1Mk-te-195"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageView" destination="J35-LD-zny" id="M1n-zM-wzq"/>
@@ -180,12 +186,16 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="SDI-6T-l2m" firstAttribute="leading" secondItem="cj3-vn-tU4" secondAttribute="leading" id="7uS-rl-UeO"/>
                             <constraint firstItem="SDI-6T-l2m" firstAttribute="top" secondItem="cj3-vn-tU4" secondAttribute="top" id="G7P-hh-Fnt"/>
                             <constraint firstItem="jfh-OB-uvi" firstAttribute="top" secondItem="SDI-6T-l2m" secondAttribute="bottom" constant="-49" id="dq2-IY-qCP"/>
                             <constraint firstAttribute="trailing" secondItem="SDI-6T-l2m" secondAttribute="trailing" id="hyY-pc-h0l"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="pZt-e0-kmz" appends="YES" id="Qq5-wo-2fD"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" systemItem="favorites" id="qyf-lJ-e4O"/>
                     <connections>
@@ -193,6 +203,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bxh-S2-jBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="pZt-e0-kmz">
+                    <connections>
+                        <action selector="gestureRecognizer:" destination="rsj-gt-eW4" id="YS5-97-72J"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1002" y="392"/>
         </scene>

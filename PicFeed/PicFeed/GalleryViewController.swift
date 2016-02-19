@@ -10,6 +10,8 @@ import UIKit
 
 class GalleryViewController: UIViewController, UICollectionViewDelegateFlowLayout
 {
+
+
     
     @IBOutlet weak var collectionView: UICollectionView!
     var datasource = [Post]()
@@ -52,6 +54,39 @@ class GalleryViewController: UIViewController, UICollectionViewDelegateFlowLayou
                 self.navigationItem.rightBarButtonItem = nil
                 
             } else { print("No posts...")
+            }
+        }
+    }
+    var smallView = GalleryCustomFlowLayout(columns: 4)
+    var mediumView = GalleryCustomFlowLayout(columns: 3)
+    var largeView = GalleryCustomFlowLayout(columns: 2)
+    
+    
+    
+    @IBAction func gestureRecognizer(sender: UIPinchGestureRecognizer)
+    {
+        
+        if sender.state == .Began {
+            if sender.velocity > 0 {
+                if self.collectionView.collectionViewLayout == self.smallView
+                {
+                    self.collectionView.collectionViewLayout = self.mediumView
+                } else if self.collectionView.collectionViewLayout == self.mediumView
+                {
+                    self.collectionView.collectionViewLayout = self.largeView
+                } else {
+                    self.collectionView.collectionViewLayout = self.largeView
+                }
+            } else {
+                if self.collectionView.collectionViewLayout == self.largeView
+                {
+                    self.collectionView.collectionViewLayout = self.mediumView
+                } else if self.collectionView.collectionViewLayout == self.mediumView
+                {
+                    self.collectionView.collectionViewLayout = self.smallView
+                } else {
+                    self.collectionView.collectionViewLayout = self.smallView
+                }
             }
         }
     }

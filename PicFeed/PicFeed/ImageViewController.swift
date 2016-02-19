@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, SegueHandlerType, FilterPreviewDelegate
 {
@@ -94,48 +95,6 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
         self.performSegueWithIdentifier(.Preview, sender: image)
 
-
-        
-//        let bwAction = UIAlertAction(title: "Black & White", style: .Default) { (action) -> Void in
-//            Filters.shared.bw(image, completion: { (theImage) -> () in
-//            self.imageView.image = theImage
-//            })
-//        }
-//        let stAction = UIAlertAction(title: "Sepia Tone", style: .Default) { (action) -> Void in
-//            Filters.shared.st(image, completion: { (theImage) -> () in
-//            self.imageView.image = theImage
-//            })
-//        }
-//        let mcAction = UIAlertAction(title: "Monochrome", style: .Default) { (action) -> Void in
-//            Filters.shared.mc(image, completion: { (theImage) -> () in
-//            self.imageView.image = theImage
-//            })
-//        }
-//            let pxAction = UIAlertAction(title: "Pixellate", style: .Default) { (action) -> Void in
-//            Filters.shared.px(image, completion: { (theImage) -> () in
-//            self.imageView.image = theImage
-//            })
-//        }
-//            let lsAction = UIAlertAction(title: "Line Screen", style: .Default) { (action) -> Void in
-//            Filters.shared.ls(image, completion: { (theImage) -> () in
-//            self.imageView.image = theImage
-//            })
-//        }
-//            let reset = UIAlertAction(title: "Reset", style: .Destructive) { (action) -> Void in
-//            self.imageView.image = self.originalImage
-//        }
-//        
-//        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-//        
-//            actionSheet.addAction(bwAction)
-//            actionSheet.addAction(stAction)
-//            actionSheet.addAction(mcAction)
-//            actionSheet.addAction(pxAction)
-//            actionSheet.addAction(lsAction)
-//            actionSheet.addAction(reset)
-//            actionSheet.addAction(cancelAction)
-//        
-//        self.presentViewController(actionSheet, animated: true, completion: nil)
     }
     
     @IBAction func saveButton(sender: AnyObject)
@@ -161,7 +120,30 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.imageView.image = image
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    @IBAction func shareButton(sender: UIBarButtonItem) {
+        
+        if SLComposeViewController.isAvailableForServiceType(SLServiceTypeTwitter)
+        {
+            let newPost = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            if let image = self.imageView.image as UIImage!
+            {
+                newPost.addImage(image)
+                self.presentViewController(newPost, animated: true, completion: nil)
+                
+            } else { return }
+            
+        } else {
+            
+            let alertController = UIAlertController(title: "Failed!", message: "You are not logged in to Twitter", preferredStyle: .Alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+    }
 }
+
+
 extension ImageViewController
 {
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?)
